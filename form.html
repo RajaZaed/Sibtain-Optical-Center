@@ -165,75 +165,134 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+    .container {
+        max-width: 400px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    h2 {
+        text-align: center;
+        color: #ff0000;
+    }
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    .services {
+        display: flex;
+        flex-direction: column;
+    }
+    .services label {
+        font-weight: normal;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #ff0000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 15px;
+    }
+    button:hover {
+        background: #cc0000;
+    }
+</style>
+</head>
+<body>
 
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">We offer professional eye care solutions to meet your needs.</p>
-    
-            <div class="services-grid">
-                <div class="service-item">
-                    <img src="assets/images/care (1).jpg" alt="Eye Checkup">
-                    <h3>Eye Checkup</h3>
-                    <p>Comprehensive eye exams to ensure your vision is perfect.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/press.jpg" alt="Prescription Glasses">
-                    <h3>Prescription Glasses</h3>
-                    <p>Find the perfect lenses tailored to your prescription.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/lensefor.jpg" alt="Contact Lenses">
-                    <h3>Contact Lenses</h3>
-                    <p>Comfortable and clear vision with our quality contact lenses.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/sun.jpg" alt="Sunglasses">
-                    <h3>Sunglasses</h3>
-                    <p>Protect your eyes with stylish and UV-protected sunglasses.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/frame.jpg" alt="Frame Selection">
-                    <h3>Frame Selection</h3>
-                    <p>Find the perfect frame that suits your style and comfort.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/lensthk.jpg" alt="Lens Coatings">
-                    <h3>Lens Coatings</h3>
-                    <p>Anti-glare, blue light protection, and scratch-resistant coatings.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/repi.jpg" alt="Repairs & Adjustments">
-                    <h3>Repairs & Adjustments</h3>
-                    <p>Fix and adjust your glasses for a perfect fit.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-    
-                <div class="service-item">
-                    <img src="assets/images/care (2).jpg" alt="Children’s Eye Care">
-                    <h3>Children’s Eye Care</h3>
-                    <p>Specialized vision solutions and eye checkups for kids.</p>
-                    <a href="form.html" class="btn">Book Service</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
+<div class="container">
+<h2>Book a Service</h2>
+<form id="bookingForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
 
-     <!-- togle -->
-     <script>
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" required>
+
+    <label>Choose Services:</label>
+    <div class="services">
+        <label><input type="checkbox" value="Eye Checkup"> Eye Checkup</label>
+        <label><input type="checkbox" value="Prescription Glasses"> Prescription Glasses</label>
+        <label><input type="checkbox" value="Contact Lenses"> Contact Lenses</label>
+        <label><input type="checkbox" value="Lens Coating"> Lens Coating</label>
+        <label><input type="checkbox" value="Frame Selection"> Frame Selection</label>
+    </div>
+
+    <label for="details">Other Details (Optional):</label>
+    <textarea id="details" rows="3"></textarea>
+
+    <label for="date">Preferred Visit Date:</label>
+    <input type="date" id="date" required>
+
+    <button type="button" onclick="submitToWhatsApp()">Submit </button>
+</form>
+</div>
+
+<script>
+function submitToWhatsApp() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var location = document.getElementById("location").value;
+    var date = document.getElementById("date").value;
+    var details = document.getElementById("details").value || "N/A";
+
+    var services = [];
+    document.querySelectorAll(".services input:checked").forEach((service) => {
+        services.push(service.value);
+    });
+
+    if (!name || !email || !phone || !location || !date) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+
+    var message = `🔔 *Service Booking Request* 🔔%0A%0A` +
+                  `👤 Name: ${name}%0A` +
+                  `📧 Email: ${email}%0A` +
+                  `📞 Phone: ${phone}%0A` +
+                  `📍 Location: ${location}%0A` +
+                  `📅 Visit Date: ${date}%0A` +
+                  `🛠️ Services: ${services.length ? services.join(", ") : "Not Selected"}%0A` +
+                  `📝 Other Details: ${details}%0A%0A` +
+                  `📩 Please confirm my booking.`;
+
+    var phoneNumber = "923001234567";  // Replace with Sibtain's WhatsApp number
+    var whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+    
+    <!-- togle -->
+    <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -242,13 +301,7 @@
         });
     </script>
 <!-- togle end -->
-
-<!-- whatsapp icon -->
-<a href="https://wa.me/923001234567" class="whatsapp-float" target="_blank">
-    <img src="assets/images/Whatsapp_37229.png" alt="WhatsApp" style="object-fit: contain;">
-</a>
-<!-- icon -->
-<!-- footer -->
+    <!-- footer -->
 <footer class="footer">
     <div class="footer-container">
       <div class="footer-about">
