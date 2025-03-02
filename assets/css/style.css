@@ -1,0 +1,460 @@
+/* Footer Section */
+.footer {
+    background-color: #ff2b2b;
+    color: #ffffff;
+    padding: 40px 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+  }
+  
+  .footer-heading {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  .footer-about p,
+  .footer-contact p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-size: 1.3rem;
+    color: black;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #ff2d2a;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #444444;
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-bottom p {
+    font-size: 0.8rem;
+    margin: 0;
+    color: black;
+  }
+  
+  .footer-socials a {
+    margin-left: 10px;
+    display: inline-block;
+  }
+  
+  .footer-socials img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-socials a:hover img {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-socials {
+      margin-top: 10px;
+    }
+  }
+
+  /* admin */
+/* maon */
+.shop-section {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shop-image {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+/* service */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service {
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+}
+
+.service i {
+    font-size: 3em;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* gola */
+/* Moving Text Section */
+.page2 {
+    min-height: 20vh;
+    width: 100%;
+    padding: 6vw 0;
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  /* Moving Text */
+  .moving-text {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  /* Continuous moving text */
+  .con {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: moveText 10s linear infinite;
+  }
+  
+  /* Text styling */
+  .moving-text h1 {
+    font-size: 9vw;
+    display: inline-block;
+    margin: 0;
+    color: rgb(0, 0, 0); /* Set text color to red */
+  }
+  
+  /* Moving Circle */
+  .gola {
+    text-align: center;
+    height: 5vh;
+    width: 2.5vw;
+    background-color: red; /* Set the circle color to red */
+    display: inline-block;
+    margin: 1vw 2vw;
+    border-radius: 50%;
+  }
+  
+  /* Keyframe Animation (Looping without disappearing) */
+  @keyframes moveText {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Hide scrollbar */
+  .moving-text::-webkit-scrollbar {
+    display: none;
+  }
+  .moving-text {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .moving-text h1 {
+      font-size: 12vw;
+    }
+  
+    .gola {
+      height: 4vh;
+      width: 5vw;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .moving-text h1 {
+      font-size: 14vw;
+    }
+  
+    .gola {
+      height: 3.5vh;
+      width: 6vw;
+    }
+  }
+  
+  /* chose */
+  .why-choose-us {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.choose-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choose-item {
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.choose-item:hover {
+    transform: translateY(-5px);
+}
+
+.choose-item i {
+    font-size: 3em;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+/* owner */
+.owner-section {
+    text-align: center;
+    padding: 5vw 2vw;
+    background-color: #f8f9fa;
+}
+
+.owner-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.owner-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid red;
+    margin-bottom: 15px;
+}
+
+.owner-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+}
+
+.owner-title {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.owner-quote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: red;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #020266;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .owner-name {
+        font-size: 1.8rem;
+    }
+    
+    .owner-title {
+        font-size: 1rem;
+    }
+    
+    .owner-quote {
+        font-size: 0.9rem;
+    }
+
+    .social-icons a {
+        font-size: 1.3rem;
+    }
+}
+/* images */
+.glasses-section {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle black background */
+    padding: 5vw 0;
+}
+
+.glasses-container {
+    display: flex;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly darker background behind images */
+    border-radius: 10px; /* Soft edges */
+    overflow: hidden;
+}
+
+.glasses-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Animation */
+@keyframes slideShow {
+    0% { opacity: 1; }
+    33.3% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.glasses-slide:nth-child(1) { animation: slideShow 6s infinite 0s; }
+.glasses-slide:nth-child(2) { animation: slideShow 6s infinite 2s; }
+.glasses-slide:nth-child(3) { animation: slideShow 6s infinite 4s; }
+
+/* Responsive */
+@media (max-width: 480px) {
+    .glasses-container {
+        width: 250px;
+        height: 150px;
+    }
+}
+
+/* test */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background: #f8f8f8;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.testimonial h4 {
+    color: red;
+    margin-top: 10px;
+}
+/* icon whatsapp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 15px;  /* Increase space from the bottom */
+    right: 15px;   /* Increase space from the right */
+    width: 50px;   /* Reduce size */
+    height: 50px;
+    z-index: 100;
+}
+
+.whatsapp-float img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+    transform: scale(1.1);
+}
