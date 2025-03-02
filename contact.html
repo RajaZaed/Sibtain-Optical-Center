@@ -166,6 +166,148 @@
         </ul>
     </nav>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #ff0000;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .map-container {
+    width: 100%; /* Ensures it takes the full width of the container */
+    overflow: hidden; /* Prevents it from spilling out */
+    text-align: center; /* Centers the map */
+}
+
+.map-container iframe {
+  
+}
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #cc0000;
+        }
+        .map {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .whatsapp-btn {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            background: #25D366;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .map {
+    text-align: center; /* Center align the map */
+    width: 100%; /* Ensures it stays within the section */
+    max-width: 100%; /* Prevents it from overflowing */
+    padding: 10px; /* Adds some spacing */
+}
+
+.map iframe {
+    width: 100%; /* Makes it fully responsive */
+    max-width: 100%; /* Prevents it from getting larger than the container */
+    height: 350px; /* Adjust height as needed */
+    border-radius: 10px; /* Optional: Rounds the corners */
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="button" onclick="sendToWhatsApp()">Submit via WhatsApp</button>
+    </form>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923001234567" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
+
+    <!-- Google Map -->
+    <div class="map">
+        <h3>Find Us Here</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.1732258409793!2d73.4661981!3d34.3715142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e09fca7eec3c3b%3A0x34e62c8fc5792b7b!2sOPTP%20Muzaffarabad!5e0!3m2!1sen!2s!4v1740951464704!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+           
+           
+    </div>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+
+        if (!name || !email || !phone || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        var textMessage = `📩 *New Contact Request* %0A%0A` +
+                          `👤 Name: ${name} %0A` +
+                          `📧 Email: ${email} %0A` +
+                          `📞 Phone: ${phone} %0A` +
+                          `📝 Message: ${message} %0A%0A` +
+                          `Please respond.`;
+
+        var phoneNumber = "923001234567";  // Replace with actual WhatsApp number
+        var whatsappURL = `https://wa.me/${phoneNumber}?text=${textMessage}`;
+
+        window.open(whatsappURL, "_blank");
+    }
+</script>
 
      <!-- togle -->
      <script>
