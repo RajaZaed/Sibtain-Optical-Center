@@ -165,130 +165,146 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        padding: 20px;
-    }
-    .container {
-        max-width: 400px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-    }
-    h2 {
-        text-align: center;
-        color: #ff0000;
-    }
-    label {
-        font-weight: bold;
-        display: block;
-        margin-top: 10px;
-    }
-    input, select, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
-    .services {
-        display: flex;
-        flex-direction: column;
-    }
-    .services label {
-        font-weight: normal;
-    }
-    button {
-        width: 100%;
-        padding: 12px;
-        background: #ff0000;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-        border-radius: 5px;
-        margin-top: 15px;
-    }
-    button:hover {
-        background: #cc0000;
-    }
-</style>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            color: #ff0000;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .services {
+            display: flex;
+            flex-direction: column;
+        }
+        .services label {
+            font-weight: normal;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background: #cc0000;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-<h2>Book a Service</h2>
-<form id="bookingForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" required>
+    <h2>Book a Service</h2>
+    <form id="bookingForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
 
-    <label for="phone">Phone Number:</label>
-    <input type="tel" id="phone" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" required>
 
-    <label for="location">Location:</label>
-    <input type="text" id="location" required>
+        <label for="location">Location:</label>
+        <input type="text" id="location" required>
 
-    <label>Choose Services:</label>
-    <div class="services">
-        <label><input type="checkbox" value="Eye Checkup"> Eye Checkup</label>
-        <label><input type="checkbox" value="Prescription Glasses"> Prescription Glasses</label>
-        <label><input type="checkbox" value="Contact Lenses"> Contact Lenses</label>
-        <label><input type="checkbox" value="Lens Coating"> Lens Coating</label>
-        <label><input type="checkbox" value="Frame Selection"> Frame Selection</label>
-    </div>
+        <label>Choose Services:</label>
+        <div class="services">
+            <label><input type="checkbox" value="Eye Checkup"> Eye Checkup</label>
+            <label><input type="checkbox" value="Prescription Glasses"> Prescription Glasses</label>
+            <label><input type="checkbox" value="Contact Lenses"> Contact Lenses</label>
+            <label><input type="checkbox" value="Lens Coating"> Lens Coating</label>
+            <label><input type="checkbox" value="Frame Selection"> Frame Selection</label>
+        </div>
 
-    <label for="details">Other Details (Optional):</label>
-    <textarea id="details" rows="3"></textarea>
+        <label for="details">Other Details (Optional):</label>
+        <textarea id="details" rows="3"></textarea>
 
-    <label for="date">Preferred Visit Date:</label>
-    <input type="date" id="date" required>
+        <label for="date">Preferred Visit Date:</label>
+        <input type="date" id="date" required>
 
-    <button type="button" onclick="submitToWhatsApp()">Submit </button>
-</form>
+        <label for="time">Preferred Time:</label>
+        <select id="time" required>
+            <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+            <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+            <option value="12:00 PM - 01:00 PM">12:00 PM - 01:00 PM</option>
+            <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+            <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+            <option value="04:00 PM - 05:00 PM">04:00 PM - 05:00 PM</option>
+            <option value="04:00 PM - 05:00 PM">06:00 PM - 07:00 PM</option>
+            <option value="04:00 PM - 05:00 PM">07:00 PM - 08:00 PM</option>
+        </select>
+
+        <button type="button" onclick="submitToWhatsApp()">Submit via WhatsApp</button>
+    </form>
 </div>
 
 <script>
-function submitToWhatsApp() {
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var phone = document.getElementById("phone").value;
-    var location = document.getElementById("location").value;
-    var date = document.getElementById("date").value;
-    var details = document.getElementById("details").value || "N/A";
+    function submitToWhatsApp() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var location = document.getElementById("location").value;
+        var date = document.getElementById("date").value;
+        var time = document.getElementById("time").value;
+        var details = document.getElementById("details").value || "N/A";
 
-    var services = [];
-    document.querySelectorAll(".services input:checked").forEach((service) => {
-        services.push(service.value);
-    });
+        var services = [];
+        document.querySelectorAll(".services input:checked").forEach((service) => {
+            services.push(service.value);
+        });
 
-    if (!name || !email || !phone || !location || !date) {
-        alert("Please fill in all required fields.");
-        return;
+        if (!name || !email || !phone || !location || !date || !time) {
+            alert("Please fill in all required fields.");
+            return;
+        }
+
+        var message = `🔔 *Service Booking Request* 🔔%0A%0A` +
+                      `👤 Name: ${name}%0A` +
+                      `📧 Email: ${email}%0A` +
+                      `📞 Phone: ${phone}%0A` +
+                      `📍 Location: ${location}%0A` +
+                      `📅 Visit Date: ${date}%0A` +
+                      `⏰ Preferred Time: ${time}%0A` +
+                      `🛠️ Services: ${services.length ? services.join(", ") : "Not Selected"}%0A` +
+                      `📝 Other Details: ${details}%0A%0A` +
+                      `📩 Please confirm my booking.`;
+
+        var phoneNumber = "923001234567";  // Replace with actual WhatsApp number
+        var whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
+
+        window.open(whatsappURL, "_blank");
     }
-
-    var message = `🔔 *Service Booking Request* 🔔%0A%0A` +
-                  `👤 Name: ${name}%0A` +
-                  `📧 Email: ${email}%0A` +
-                  `📞 Phone: ${phone}%0A` +
-                  `📍 Location: ${location}%0A` +
-                  `📅 Visit Date: ${date}%0A` +
-                  `🛠️ Services: ${services.length ? services.join(", ") : "Not Selected"}%0A` +
-                  `📝 Other Details: ${details}%0A%0A` +
-                  `📩 Please confirm my booking.`;
-
-    var phoneNumber = "923001234567";  // Replace with Sibtain's WhatsApp number
-    var whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-    window.open(whatsappURL, "_blank");
-}
 </script>
+
 
     
     <!-- togle -->
