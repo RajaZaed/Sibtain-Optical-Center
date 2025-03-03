@@ -546,3 +546,31 @@ h2 {
       align-items: center;
   }
 }
+
+.book{
+  height: 16vh;
+  background-color: #e0dfdf;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-one{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 4vh;
+  border: 1px solid #ff0000;
+  
+}
+
+.btn-one:hover{
+  border-radius: 45px;
+  transition: 0.8s ease;
+}
+ .book a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+ }
