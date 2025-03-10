@@ -123,9 +123,10 @@ html {
 }
 
 .shop-image {
-    width: 80%;
+    width: 70%;
     height: 80%;
     object-fit: cover;
+    margin: auto;
 }
 /* service */
 .services-section {
